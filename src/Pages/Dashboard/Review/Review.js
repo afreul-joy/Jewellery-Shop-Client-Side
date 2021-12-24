@@ -29,7 +29,7 @@ const Review = () => {
         const review = {
             ...reviewInfo
         };
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://jewellery-shop1.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -21,7 +21,7 @@ const Purchase = () => {
     const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://jewellery-shop1.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data));
     }, []);
@@ -48,7 +48,7 @@ const Purchase = () => {
             status: 'pending'
         };
         // send to the server
-        fetch('http://localhost:5000/orders', {
+        fetch('https://jewellery-shop1.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

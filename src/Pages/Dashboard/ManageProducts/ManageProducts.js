@@ -5,7 +5,7 @@ import ManageSingleProduct from '../ManageSingleProduct/ManageSingleProduct';
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://jewellery-shop1.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -14,7 +14,7 @@ const ManageProducts = () => {
         console.log(id);
         const proceed = window.confirm('Confirm delete your order?')
         if (proceed) {
-            const uri = `http://localhost:5000/products/${id}`;
+            const uri = `https://jewellery-shop1.herokuapp.com/products/${id}`;
             fetch(uri, {
                 method: "DELETE",
             })

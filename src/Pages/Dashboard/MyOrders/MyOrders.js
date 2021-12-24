@@ -7,7 +7,7 @@ const MyOrders = () => {
     const { user } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user.email}`)
+        fetch(`https://jewellery-shop1.herokuapp.com/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [user.email]);
@@ -16,7 +16,7 @@ const MyOrders = () => {
         console.log(id);
         const proceed = window.confirm('Confirm delete your order?')
         if (proceed) {
-            const uri = `http://localhost:5000/myOrders/${id}`;
+            const uri = `https://jewellery-shop1.herokuapp.com/myOrders/${id}`;
             fetch(uri, {
                 method: "DELETE",
             })

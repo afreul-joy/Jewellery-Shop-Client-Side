@@ -6,14 +6,14 @@ const AllOrders = () => {
     const { user } = useAuth();
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://jewellery-shop1.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [user.email]);
     const handleDelete = (id) => {
         const proceed = window.confirm('Confirm delete your order?')
         if (proceed) {
-            const uri = `http://localhost:5000/myOrders/${id}`;
+            const uri = `https://jewellery-shop1.herokuapp.com/myOrders/${id}`;
             fetch(uri, {
                 method: "DELETE",
             })
@@ -28,7 +28,7 @@ const AllOrders = () => {
 
     const handleApprove = id => {
         const update = { status: "shipped" }
-        fetch(`http://localhost:5000/myOrders/approve/${id}`, {
+        fetch(`https://jewellery-shop1.herokuapp.com/myOrders/approve/${id}`, {
             method: 'PUT',
             headers: {
                 "content-type": "application/json"
@@ -37,7 +37,7 @@ const AllOrders = () => {
         })
             .then(res => res.json())
             .then(data => {
-                fetch("http://localhost:5000/orders")
+                fetch("https://jewellery-shop1.herokuapp.com/orders")
                     .then((res) => res.json())
                     .then((data) => setMyOrders(data));
             }
