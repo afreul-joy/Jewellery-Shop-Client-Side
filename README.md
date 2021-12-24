@@ -1,5 +1,5 @@
 
-A fullstack Project [Jewellery Heaven](https://niche-products-website-b04de.web.app).
+A fullstack Project [Jewellery World](https://jewellery-shop-a897c.web.app/).
 
 - A Product Based Website, where you can buy jewellry
 - Home page has 6 sections(navbar, banner, few products, services, reviews, footer)
